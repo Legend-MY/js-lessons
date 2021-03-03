@@ -1,0 +1,41 @@
+// Подключение шрифтов ===============================================================================
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+@import "fonts";
+
+// Подключение файла обнуления стилей ====================================================================
+@import "nullstyle";
+
+// Переменные =============================================================================================
+
+$minWidth: 320px;
+$maxWidth: 1500;
+$maxWidthContainer: 1210;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md2: 479.98;
+
+// Основная сетка ===========================================================================================
+.container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0 20px;
+  // @media (max-width: $md1+px) {
+  //   max-width: 970px;
+  // }
+  // @media (max-width: $md2+px) {
+  //   max-width: 750px;
+  // }
+  // @media (max-width: $md3+px) {
+  //   max-width: none;
+  //   padding: 0 10px;
+  // }
+}
